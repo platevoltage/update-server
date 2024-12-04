@@ -21,7 +21,7 @@ app.get("/latest-linux.yml", (req, res) => {
 });
 
 // Serve the release files (e.g., my-app-v1.0.0.zip or my-app-v1.0.0.dmg)
-app.get("/releases/:filename", (req, res) => {
+app.get("/:filename", (req, res) => {
   const filePath = path.join(releaseFolder, req.params.filename);
 
   if (fs.existsSync(filePath)) {
